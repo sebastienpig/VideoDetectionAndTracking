@@ -9,8 +9,9 @@
 ### Explain how (and identify where in your code) you extracted HOG features from the training images. Explain how you settled on your final choice of HOG parameters.
 
 
-The single_img_features or extract_features (for several images) use the function get_hog_features
+The single_img_features or extract_features (for several images) use the function get_hog_features (lines 238-248) in the library_classifier.py file
 
+<pre>
  #7) Compute HOG features if flag is set
     if hog_feat == True:
         if hog_channel == 'ALL':
@@ -22,12 +23,13 @@ The single_img_features or extract_features (for several images) use the functio
         else:
             hog_features = get_hog_features(feature_image[:,:,hog_channel], orient, 
                         pix_per_cell, cell_per_block, vis=False, feature_vec=True)
+</pre>
 
 ### Explanation given for methods used to extract HOG features, including which color space was chosen, which HOG parameters (orientations, pixels_per_cell, cells_per_block), and why.
 
 ### Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-
+<img src='car_before_hog.png'>
 
 ## Sliding Window Search
 
