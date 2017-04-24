@@ -104,7 +104,7 @@ If the number of pixels per cell is 2 we get a HOG very precise but computation 
 
 
 #### with 8 pixels
-<img src="pictures/hog-8pixels.png" alt="Drawing" style="width: 64px;"/> 
+<img src="pictures/hog-8pixels.png" alt="Drawing2" style="width: 64px;"/> 
 
 ### Explanation given for methods used to extract HOG features, including which color space was chosen, which HOG parameters (orientations, pixels_per_cell, cells_per_block), and why.
 
