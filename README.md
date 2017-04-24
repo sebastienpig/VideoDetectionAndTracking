@@ -195,8 +195,25 @@ windows = slide_window(img, x_start_stop=x_start_stop, y_start_stop=y_start_stop
 </pre>
 
 
-Threshold of 60% was chosen, I did not get many false positive using the find_cars.
+Threshold of 100% accuracy was first chosen and in find_cars and no false positive are found (lines 348-352 in library_classifier.py):
 
+<pre>
+    test_prediction = svc.predict(test_features)
+            
+
+            if test_prediction == 1:
+            I did not get many false positive using the find_cars.
+</pre>
+
+To give a higher chance of finding cars I decreased to 60% and started finding some false positive
+
+<pre>
+            test_prediction = svc.predict(test_features)
+            
+            prediction = int(test_prediction>0.6)
+
+            if test_prediction == 1:
+</pre>
 
 #### Heat functions
 
