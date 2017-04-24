@@ -10,6 +10,9 @@ import time
 from sklearn.svm import LinearSVC
 from sklearn.preprocessing import StandardScaler
 
+# the below functions are provided by UDACITY or slighlty modified to be included in my pipeline
+
+#the following class did not have to be used when using the find_cars method becasue accuracy was really good
 class tracking_car:
 
     def __init__(self):
