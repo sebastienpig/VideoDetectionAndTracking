@@ -190,7 +190,7 @@ def add_heat(heatmap, bbox_list):
 
 </pre>
 
-<img src="pictures/detection on 1 image.png">
+<img src="pictures/detection_on_1_image.png">
 
 
 And in the pipeline we simplified the windows if more than windows superimpose:
