@@ -172,7 +172,7 @@ Threshold of 60% was chosen, I did not get many false positive using the find_ca
 
 Using the search_windows (single frame video) I got many more false positive, see result_video_SingleFrameSolution.mp4.
 
-The frame has overlapping windows where the model is applied to.
+The image frame has overlapping windows where the model is applied to.
 
 The multiple detection are simplified using the add_heat:
 
@@ -208,13 +208,10 @@ The pixels part of the window that is detected is represented by a heatmap:
 ## Video Implementation
 
 
-Provide a link to your final video output. Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
+Videos output:
 
-The sliding-window search plus classifier has been used to search for and identify vehicles in the videos provided. Video output has been generated with detected vehicle positions drawn (bounding boxes, circles, cubes, etc.) on each frame of video.
-
-Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
-
-A method, such as requiring that a detection be found at or near the same position in several subsequent frames, (could be a heat map showing the location of repeat detections) is implemented as a means of rejecting false positives, and this demonstrably reduces the number of false positives. Same or similar method used to draw bounding boxes (or circles, cubes, etc.) around high-confidence detections where multiple overlapping detections occur.
+<li> result_video.mp4 </li>using the find_cars function. Long computation time: 20218 seconds, high accuracy.
+<li> result_video_SingleFrameSolution.mp4 </li> a few false positive but faster to calculate
 
 ## Discussion
 
