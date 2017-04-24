@@ -14,7 +14,7 @@ class tracking_car:
 
     def __init__(self):
         self.frame_cpt=1
-        self.rolling_average=10
+        self.rolling_average=15
         self.heatmap_prev = None
         self.heatmap_average = None
 
@@ -111,7 +111,7 @@ def search_windows (img, windows, clf, scaler, color_space='RGB',
         #6) Predict using your classifier
         prediction = clf.predict(test_features)
         #7) If positive (prediction == 1) then save the window
-        prediction = int(prediction>0.7)
+        prediction = int(prediction>0.6)
         if prediction == 1:
             on_windows.append(window)
     #8) Return windows for positive detections
@@ -181,7 +181,7 @@ def extract_features(imgs, color_space='RGB', spatial_size=(32, 32),
         file_features = []
         # Read in each one by one
         image = mpimg.imread(file)
-        image = (image * 255).astype(np.uint8)
+        #image = (image * 255).astype(np.uint8)
 
         # apply color conversion if other than 'RGB'
         if color_space != 'RGB':
@@ -320,6 +320,8 @@ def find_cars(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, ce
     hog2 = get_hog_features(ch2, orient, pix_per_cell, cell_per_block, feature_vec=False)
     hog3 = get_hog_features(ch3, orient, pix_per_cell, cell_per_block, feature_vec=False)
     
+    bbox_list = []
+
     for xb in range(nxsteps):
         for yb in range(nysteps):
             ypos = yb*cells_per_step
@@ -350,6 +352,7 @@ def find_cars(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, ce
                 ytop_draw = np.int(ytop*scale)
                 win_draw = np.int(window*scale)
                 cv2.rectangle(draw_img,(xbox_left, ytop_draw+ystart),(xbox_left+win_draw,ytop_draw+win_draw+ystart),(0,0,255),6) 
-                
-    return draw_img
+  
+                bbox_list.append(((xbox_left, ytop_draw + ystart), (xbox_left + win_draw, ytop_draw + win_draw + ystart)))              
+    return draw_img, bbox_list
     
