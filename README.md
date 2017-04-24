@@ -250,10 +250,18 @@ The pixels part of the window that is detected is represented by a heatmap:
 
 ## Video Implementation
 
+The video implementation is uing from moviepy.editor import VideoFileClip
+
+Pipeline is applied on image and result written on a mp4 file format.
 
 Videos output:
 
-<li> result_video.mp4 </li>using the find_cars function. Long computation time: 20218 seconds, high accuracy.
+<li> result_video.mp4 </li>using the find_cars function. Long computation time (20 minutes seconds)
+with thresholds at: <br>
+100%, perfect accuracy but just the two cars at the forefront are detected<br>
+60%, cars at the forefront are detected and a couple of false positive 
+80%, cars at the forefront are detected and also farther toward the horizon
+
 <li> result_video_SingleFrameSolution.mp4 </li> a few false positive but faster to calculate
 
 ## Discussion
