@@ -2,10 +2,13 @@
 
 
 We start examining car and nocar pictures dataset.
-<img src="pictures/car.png"> CAR image from vehicles dataset
-<BR>
-<img src="pictures/nocar.png"> NOCAR dataset from non- vehicles dataset
-<BR>
+
+<tr>
+    <td> <img src="pictures/car.png" alt="Drawing" style="width: 64px;"/> </td>
+    <td> <img src="pictures/nocar.png" alt="Drawing" style="width: 64px;"/> </td>
+</tr>
+
+
 
 ## Histogram of Oriented Gradients (HOG)
 
