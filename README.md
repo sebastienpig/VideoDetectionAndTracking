@@ -195,7 +195,10 @@ windows = slide_window(img, x_start_stop=x_start_stop, y_start_stop=y_start_stop
 </pre>
 
 
-Threshold of 100% accuracy was first chosen and in find_cars and no false positive are found (lines 348-352 in library_classifier.py):
+#### find_cars
+The find_cars function has been modified to return an additional argument <b>bbox_list</b> to be used by the heat functions.
+
+Several thresholds were tested to select an acceptable accuracy level and avoid false positive (lines 348-352 in library_classifier.py):
 
 <pre>
     test_prediction = svc.predict(test_features)
@@ -256,12 +259,14 @@ Pipeline is applied on image and result written on a mp4 file format.
 
 Videos output:
 
-<li> result_video.mp4 </li>using the find_cars function. Long computation time (20 minutes seconds)
+<li> result_video.mp4 </li>using the find_cars function. Long computation time (23 minutes)
 with thresholds at: <br>
-<li>100%, perfect accuracy but just the two cars at the forefront are detected</li><br>
-<li>60%, cars at the forefront are detected and a couple of false positive </li><br>
-<li>80%, cars at the forefront are detected and also farther toward the horizon</li>
 
+<ul style="list-style-type:square">
+  <li>100%, perfect accuracy but just the two cars at the forefront are detected</li>
+  <li>60%, cars at the forefront are detected and a couple of false positive</li>
+  <li>80%, cars at the forefront are detected and also farther toward the horizon</li>
+</ul>
 <li> result_video_SingleFrameSolution.mp4 </li> a few false positive but faster to calculate
 
 ## Discussion
