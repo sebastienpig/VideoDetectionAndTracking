@@ -169,7 +169,7 @@ svc.fit(X_train, y_train)
 
 The classifier has been applied on windows that overlapp, a canevas where to search for cars. The windows are of different sizes to detect cars of different size as they get closer to the horizon.
 
-<img src="windows.png">
+<img src="pictures/windows.png">
 
 Once  I got many more false positive, see result_video_SingleFrameSolution.mp4.
 
