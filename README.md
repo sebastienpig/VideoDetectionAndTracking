@@ -3,13 +3,8 @@
 
 We start examining car and nocar pictures dataset.
 
-#### Car dataset
+#### Car dataset / NoCar dataset
 <img src="pictures/car.png" alt="Drawing" style="width: 64px;"/> 
-
-#### NoCar dataset
-<img src="pictures/nocar.png" alt="Drawing" style="width: 64px;"/>
-
-
 
 
 ## Histogram of Oriented Gradients (HOG)
@@ -66,6 +61,8 @@ Paremeters chosen were:
         1.,  0.,  1.,  0.,  1.,  0.,  0.]))
 (0.00894, 'Seconds to predict', 20, 'labels with SVC')
 </pre>
+
+
 <b> Using YCrCb </b>
 
 <li>color_space='YCrCb'</li>
@@ -99,6 +96,15 @@ Paremeters chosen were:
 
 The test accuracy with YCrCb has the highest accuracy with respects of other parameters (YUV 98.51% ; 97.55% for HSV)
 
+
+If the number of pixels per cell is 2 we get a HOG very precise but computation time is greater. 8 provides a good compromise
+
+#### with 2 pixels
+<img src="pictures/hog-2pixels.png" alt="Drawing" style="width: 64px;"/> 
+
+
+#### with 8 pixels
+<img src="pictures/hog-8pixels.png" alt="Drawing" style="width: 64px;"/> 
 
 ### Explanation given for methods used to extract HOG features, including which color space was chosen, which HOG parameters (orientations, pixels_per_cell, cells_per_block), and why.
 
