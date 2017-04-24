@@ -3,10 +3,12 @@
 
 We start examining car and nocar pictures dataset.
 
-<tr>
-    <td> <img src="pictures/car.png" alt="Drawing" style="width: 64px;"/> </td>
-    <td> <img src="pictures/nocar.png" alt="Drawing" style="width: 64px;"/> </td>
-</tr>
+#### Car dataset
+<img src="pictures/car.png" alt="Drawing" style="width: 64px;"/> 
+
+#### NoCar dataset
+<img src="pictures/nocar.png" alt="Drawing" style="width: 64px;"/>
+
 
 
 
