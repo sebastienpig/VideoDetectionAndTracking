@@ -55,8 +55,38 @@ Paremeters chosen were:
         1.,  0.,  1.,  0.,  1.,  0.,  0.]))
 (0.00894, 'Seconds to predict', 20, 'labels with SVC')
 </pre>
+<b> Using YCrCb </b>
 
-The test accuracy was better using YUV 98.51% vs 97.55% for HSV
+<li>color_space='YCrCb'</li>
+<li>orient=9</li>
+<li>pix_per_cell=8</li>
+<li>cell_per_block=2</li>
+<li>hog_channel='ALL'</li>
+<li>spatial_size=(32, 32)</li>
+<li>hist_bins=32</li>
+<li>hist_range=(0, 256)</li>
+
+<pre>
+(89.08, 'Seconds to extract HOG features...')
+('cars is length:', 8792)
+('notcars is length', 8968)
+('number of features', 8792)
+(' number of features', 8968)
+((8460,), (8460,), (8460,))
+
+('Feature vector length:', 8460)
+(26.45, 'Seconds to train SVC...')
+('Test Accuracy of SVC = ', 0.9882)
+('TRAIN Accuracy of SVC = ', 1.0)
+('My SVC predicts: ', array([ 1.,  1.,  0.,  1.,  1.,  0.,  1.,  0.,  0.,  0.,  0.,  1.,  1.,
+        0.,  1.,  1.,  0.,  0.,  0.,  1.]))
+('For these', 20, 'labels: ', array([ 1.,  1.,  0.,  1.,  1.,  0.,  1.,  0.,  0.,  0.,  0.,  1.,  1.,
+        0.,  1.,  1.,  0.,  0.,  0.,  1.]))
+(0.03915, 'Seconds to predict', 20, 'labels with SVC')
+
+</pre>
+
+The test accuracy with YCrCb has the highest accuracy with respects of other parameters (YUV 98.51% ; 97.55% for HSV)
 
 
 ### Explanation given for methods used to extract HOG features, including which color space was chosen, which HOG parameters (orientations, pixels_per_cell, cells_per_block), and why.
