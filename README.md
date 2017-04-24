@@ -167,12 +167,38 @@ svc.fit(X_train, y_train)
 
 ## Sliding Window Search
 
+The classifier has been applied on windows that overlapp, a canevas where to search for cars. The windows are of different sizes to detect cars of different size as they get closer to the horizon.
+
+<img src="windows.png">
+
+Once  I got many more false positive, see result_video_SingleFrameSolution.mp4.
+
+The image frame has overlapping windows where the model is applied to.
+
+<pre>
+windows = slide_window(img, x_start_stop=x_start_stop, y_start_stop=y_start_stop,
+                               xy_window=scale, xy_overlap=(overlap, overlap))
+
+        # STEP 2 : Apply classifier on current windows
+        """
+        hot_windows = search_windows(img, windows, svc, scaler=X_scaler, color_space=color_space,
+                                     spatial_size=spatial_size, hist_bins=hist_bins,
+                                     orient=orient, pix_per_cell=pix_per_cell,
+                                     cell_per_block=cell_per_block,
+                                     hog_channel=hog_channel, spatial_feat=spatial_feat,
+                                     hist_feat=hist_feat, hog_feat=hog_feat)
+        """
+        draw_img, bbox_list = find_cars(img, ystart=400, ystop=680 , scale=1.5, svc=svc, X_scaler=X_scaler, orient=orient,
+                                   pix_per_cell=pix_per_cell, cell_per_block=cell_per_block,
+                                   spatial_size=spatial_size, hist_bins=hist_bins)
+                                   
+</pre>
+
 
 Threshold of 60% was chosen, I did not get many false positive using the find_cars.
 
-Using the search_windows (single frame video) I got many more false positive, see result_video_SingleFrameSolution.mp4.
 
-The image frame has overlapping windows where the model is applied to.
+#### Heat functions
 
 The multiple detection are simplified using the add_heat:
 
